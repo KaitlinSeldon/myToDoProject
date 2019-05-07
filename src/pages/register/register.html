@@ -1,0 +1,31 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Register an account</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="user.first_name" placeholder="First Name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="user.last_name" placeholder="Last Name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="user.username" placeholder="Userame"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" [(ngModel)]="user.password" placeholder="Password"></ion-input>
+        </ion-item>
+        <button ion-button (click)="auth.registerUser(user)">Register</button>
+      </ion-list>
+
+      <ion-list> 
+          <ion-item *ngFor="let error of auth.errors">
+              {{error}}
+          </ion-item>
+        </ion-list>
+</ion-content>
