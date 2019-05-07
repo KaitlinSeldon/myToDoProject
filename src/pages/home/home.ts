@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
-import { NavController, ModalController } from 'ionic-angular';
+import { NavController, ModalController, NavParams } from 'ionic-angular';
 import { NewItemPage } from '../new-item/new-item'
-=======
-import { NavController, NavParams } from 'ionic-angular';
 import { AuthService } from './../../app/services/authService';
->>>>>>> ab635d114c843f081e0f27ebf10eafa393d54920
 
 @Component({
   selector: 'page-home',
@@ -13,16 +9,20 @@ import { AuthService } from './../../app/services/authService';
   providers: [AuthService]
 })
 export class HomePage {
-<<<<<<< HEAD
+  username: string;
+  password: string;
   public items = [];
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
+  constructor(
+    public navCtrl: NavController,
+    public modalCtrl: ModalController,
+    public auth: AuthService,
+    public navParams: NavParams
+    ) {}
 
-  }
-
-  ionViewDidLoad(){
-
-  }
+    ionViewDidLoad() {
+      console.log('ionViewDidLoad HomePage');
+    }
 
   addItem(){
 
@@ -40,26 +40,13 @@ export class HomePage {
 
   }
 
-  saveItem(item){
+  saveItem(item: string){
     this.items.push(item);
   }
 
-  viewItem(item){
+  viewItem(item: string){
 
   }
 
 }
-=======
-  username: string;
-  password: string;
-  
-  constructor(
-    public auth: AuthService,
-    public navCtrl: NavController,
-    public navParams: NavParams) { }
 
-    ionViewDidLoad() {
-      console.log('ionViewDidLoad HomePage');
-    }
-}
->>>>>>> ab635d114c843f081e0f27ebf10eafa393d54920

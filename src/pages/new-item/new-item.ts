@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 
 
-@IonicPage()
+
 @Component({
   selector: 'page-new-item',
-  templateUrl: 'new-item.html',
+  templateUrl: 'new-item.html'
 })
 export class NewItemPage {
 

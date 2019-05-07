@@ -3,11 +3,8 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-<<<<<<< HEAD
 import { HomePage } from '../pages/home/home';
-=======
 import { TabsPage } from '../pages/tabs/tabs';
->>>>>>> ab635d114c843f081e0f27ebf10eafa393d54920
 
 @Component({
   templateUrl: 'app.html'

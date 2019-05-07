@@ -1,54 +1,52 @@
-<ion-header>
-  <ion-navbar color="primary">
-    <ion-title>
-<<<<<<< HEAD
-      My To-dos!
-    </ion-title>
-    <ion-buttons start>
-      <button ion-button icon-only (click)="addItem(name)"><ion-icon name="add"></ion-icon></button>
-    </ion-buttons>
-  </ion-navbar>
-</ion-header>
+  <ion-header>
+      <ion-navbar color="primary">
+        <ion-title>
+        To Do
+      </ion-title>
 
+      <ion-buttons start>
+          <button ion-button icon-only (click)="addItem(name)"><ion-icon name="add"></ion-icon></button>
+        </ion-buttons>    
 
-<ion-content padding>
-   
-  <ion-list inset>
-      <ion-item *ngFor="let item of items" (click)="viewItem(item)">
-        {{item.name}}
-        <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>
-  </ion-list>
-</ion-content>
+      <ion-list class="row" *ngIf="!auth.loggedIn; else loggedIn">
 
+          <ion-item class="login">
+            <ion-input type="text" [(ngModel)]="username" placeholder="Username"></ion-input>
+          </ion-item>
+        
+          <ion-item class="login">
+            <ion-input type="password" [(ngModel)]="password" placeholder="Password"></ion-input>
+          </ion-item>
 
-=======
-      To Do
-    </ion-title>
-    
-    <ion-list class="row" *ngIf="!auth.loggedIn; else loggedIn">
-        <ion-item class="login">
-          <ion-input type="text" [(ngModel)]="username" placeholder="Username"></ion-input>
-        </ion-item>
+          <button ion-button (click)="auth.signIn(username, password)">Sign In</button>
       
-        <ion-item class="login">
-          <ion-input type="password" [(ngModel)]="password" placeholder="Password"></ion-input>
-        </ion-item>
-        <button ion-button (click)="auth.signIn(username, password)">Sign In</button>
-    
-    </ion-list> 
-    
-    <ng-template #loggedIn>
-      <ion-item id="welcome"> 
-        Welcome back!
-      </ion-item>
-    </ng-template>
+      </ion-list> 
+      
+      <ng-template #loggedIn>
 
-    <ion-list> 
-      <ion-item *ngFor="let error of auth.errors">
-          {{error}}
-      </ion-item>
-    </ion-list>
-  </ion-navbar>
-</ion-header>
->>>>>>> ab635d114c843f081e0f27ebf10eafa393d54920
+        <ion-item id="welcome"> 
+          Welcome back!
+        </ion-item>
+
+      </ng-template>
+
+      <ion-list> 
+
+        <ion-item *ngFor="let error of auth.errors">
+            {{error}}
+        </ion-item>
+
+      </ion-list>
+    </ion-navbar>
+  </ion-header>
+
+
+  <ion-content padding>
+    
+      <ion-list inset>
+          <ion-item *ngFor="let item of items" (click)="viewItem(item)">
+            {{item.name}}
+            <ion-checkbox color="dark"></ion-checkbox>
+          </ion-item>
+      </ion-list>
+    </ion-content>
